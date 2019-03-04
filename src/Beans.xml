@@ -3,6 +3,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:websocket="http://www.springframework.org/schema/websocket"
+	
 	xsi:schemaLocation="
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -43,12 +44,12 @@
 
 
 	<!-- p名称空间型 -->
-	<!-- <bean id="person" class="cn.itcast.property.Person" p:pname="zhangsan"></bean> -->
+	<bean id="person" class="cn.itcast.property.Person" p:pname="zhangsan"></bean>
 
 
 	<!-- 注入复杂类型属性值 -->
-	<!-- <bean id="person" class="cn.itcast.property.Person">
-		数组
+	<bean id="person" class="cn.itcast.property.Person">
+		<!-- 数组 -->
 		<property name="arrs">
 			<list>
 				<value>111</value>
@@ -58,7 +59,7 @@
 
 		</property>
 
-		list
+		<!-- list -->
 		<property name="list">
 			<list>
 				<value>aaa</value>
@@ -68,7 +69,7 @@
 
 		</property>
 
-		map
+		<!-- map -->
 		<property name="list">
 			<map>
 				<entry key="aaa" value="zhangsan"></entry>
@@ -78,7 +79,7 @@
 
 		</property>
 
-		properties
+		<!-- properties -->
 		<property name="properties">
 			<props>
 				<prop key="driverclass">com.mysql.jbc.Driver</prop>
@@ -86,7 +87,7 @@
 			</props>
 
 		</property>
-	</bean> -->
+	</bean>
 
 
 

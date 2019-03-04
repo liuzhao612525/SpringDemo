@@ -11,11 +11,11 @@ public class Person {
 		this.pname = pname;
 	}
 	public void test1() {
-//		System.out.println("name..........." + pname);
-		System.out.println("arrs..........." + arrs);
-		System.out.println("list..........." + list);
-		System.out.println("map..........." + map);
-		System.out.println("properties..........." + properties);
+		System.out.println("name..........." + pname);
+//		System.out.println("arrs..........." + arrs);
+//		System.out.println("list..........." + list);
+//		System.out.println("map..........." + map);
+//		System.out.println("properties..........." + properties);
 	}
 	
 	private String[] arrs;

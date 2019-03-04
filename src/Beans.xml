@@ -1,51 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    
+
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:websocket="http://www.springframework.org/schema/websocket"
-    xsi:schemaLocation="
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:websocket="http://www.springframework.org/schema/websocket"
+	xsi:schemaLocation="
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/websocket
         http://www.springframework.org/schema/websocket/spring-websocket.xsd">
 
 	<!-- 实例方法（最常用） -->
-  	<!-- <bean id="user" class="cn.itcast.ioc.User" scope="singleton"> </bean> -->
+	<!-- <bean id="user" class="cn.itcast.ioc.User" scope="singleton"> </bean> -->
 
 
 	<!-- 静态工厂 -->
-   	<!-- <bean id="bean2" class="cn.itcast.bean.Bean2Factory" factory-method="getBean2"> </bean> -->
-  
-  
-   <!-- 使用实例工厂 -->
-	<!-- <bean id="bean3Factory" class="cn.itcast.bean.Bean3Factory"></bean> -->
-	<!-- <bean id="bean3" factory-bean="bean3Factory" factory-method=""></bean> -->
-	
-	
+	<!-- <bean id="bean2" class="cn.itcast.bean.Bean2Factory" factory-method="getBean2"> 
+		</bean> -->
+
+
+	<!-- 使用实例工厂 -->
+	<!-- <bean id="bean3Factory" class="cn.itcast.bean.Bean3Factory"></bean> 
+		<bean id="bean3" factory-bean="bean3Factory" factory-method=""></bean> -->
+
+
 	<!-- 使用有参数的构造注入属性 -->
 	<!-- <bean id="demo" class="cn.itcast.property.PropertyDemo1"> -->
-		<!-- 使用有参构造注入 -->
-		<!-- <constructor-arg name="username" value="xiao wang"></constructor-arg> -->
+	<!-- 使用有参构造注入 -->
+	<!-- <constructor-arg name="username" value="xiao wang"></constructor-arg> -->
 	<!-- </bean> -->
-	
-	
+
+
 	<!-- 使用set方法注入属性 -->
-	<!-- <bean id="book" class="cn.itcast.property.Book">
-	注入属性值，name属性名，value属性值
-		<property name="bookName" value="三国演义"></property>
-	</bean> -->
-	
-	
+	<!-- <bean id="book" class="cn.itcast.property.Book"> 注入属性值，name属性名，value属性值 
+		<property name="bookName" value="三国演义"></property> </bean> -->
+
+
 	<!-- 注入对象属性 -->
 	<!-- 配置service和dao对象 -->
-	<!-- <bean id="userDao" class="cn.itcast.ioc.UserDao"></bean>
-	<bean id="userService" class="cn.itcast.ioc.UserService">
-	注入dao对象 现在不要写value属性，因为现在是dao对象，写ref属性，dao配置bean标签中id值 
-		<property name="userDao" ref="userDao"></property>
-	</bean> -->
-	
-	
+	<!-- <bean id="userDao" class="cn.itcast.ioc.UserDao"></bean> <bean id="userService" 
+		class="cn.itcast.ioc.UserService"> 注入dao对象 现在不要写value属性，因为现在是dao对象，写ref属性，dao配置bean标签中id值 
+		<property name="userDao" ref="userDao"></property> </bean> -->
+
+
 	<!-- p名称空间型 -->
-	<bean id="person" class="cn.itcast.property.Person"></bean>
-	
+	<!-- <bean id="person" class="cn.itcast.property.Person" p:pname="zhangsan"></bean> -->
+
+
+	<!-- 注入复杂类型属性值 -->
+	<bean id="person" class="cn.itcast.property.Person">
+		<!-- 数组 -->
+		<property name="arrs">
+			<list>
+				<value>111</value>
+				<value>222</value>
+				<value>333</value>
+			</list>
+
+		</property>
+
+		<!-- list -->
+		<property name="list">
+			<list>
+				<value>aaa</value>
+				<value>bbb</value>
+				<value>ccc</value>
+			</list>
+
+		</property>
+
+		<!-- map -->
+		<property name="list">
+			<map>
+				<entry key="aaa" value="zhangsan"></entry>
+				<entry key="bbb" value="lisi"></entry>
+				<entry key="ccc" value="wangwu"></entry>
+			</map>
+
+		</property>
+
+		<!-- properties -->
+		<property name="properties">
+			<props>
+				<prop key="driverclass">com.mysql.jbc.Driver</prop>
+				<prop key="username">root</prop>
+			</props>
+
+		</property>
+	</bean>
+
+
+
 </beans>

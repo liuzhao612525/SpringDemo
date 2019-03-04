@@ -47,8 +47,8 @@
 
 
 	<!-- 注入复杂类型属性值 -->
-	<bean id="person" class="cn.itcast.property.Person">
-		<!-- 数组 -->
+	<!-- <bean id="person" class="cn.itcast.property.Person">
+		数组
 		<property name="arrs">
 			<list>
 				<value>111</value>
@@ -58,7 +58,7 @@
 
 		</property>
 
-		<!-- list -->
+		list
 		<property name="list">
 			<list>
 				<value>aaa</value>
@@ -68,7 +68,7 @@
 
 		</property>
 
-		<!-- map -->
+		map
 		<property name="list">
 			<map>
 				<entry key="aaa" value="zhangsan"></entry>
@@ -78,7 +78,7 @@
 
 		</property>
 
-		<!-- properties -->
+		properties
 		<property name="properties">
 			<props>
 				<prop key="driverclass">com.mysql.jbc.Driver</prop>
@@ -86,7 +86,7 @@
 			</props>
 
 		</property>
-	</bean>
+	</bean> -->
 
 
 
